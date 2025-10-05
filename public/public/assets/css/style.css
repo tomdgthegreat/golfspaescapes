@@ -1,0 +1,339 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    color: #2d3436;
+    background: #faf8f3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Navigation */
+.main-nav {
+    background: linear-gradient(135deg, #1a4d2e 0%, #0d3320 100%);
+    color: white;
+    padding: 1.2rem 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #d4a574;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a4d2e 0%, #4a90a4 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(to bottom, #4a90a4, #6babc4);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.newsletter-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 400;
+}
+
+.newsletter-section p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    color: white;
+    opacity: 0.95;
+}
+
+.newsletter-embed {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Latest Posts Section */
+.latest-posts {
+    padding: 5rem 0;
+    background: white;
+}
+
+.latest-posts h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a4d2e;
+    text-align: center;
+    font-weight: 400;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.post-card {
+    background: #faf8f3;
+    border: 1px solid #f5e6d3;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 8px 25px rgba(26, 77, 46, 0.15);
+    transform: translateY(-5px);
+    border-color: #d4a574;
+}
+
+.post-card h3 {
+    margin-bottom: 1rem;
+    color: #1a4d2e;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.post-card h3 a {
+    color: #1a4d2e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-card h3 a:hover {
+    color: #4a90a4;
+}
+
+.post-card p {
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.read-more {
+    color: #4a90a4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #1a4d2e;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #2d3436 0%, #1a1d1f 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #a8c686;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #d4a574;
+}
+
+/* Article Styles */
+article {
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    background: white;
+    border-radius: 12px;
+}
+
+article h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #1a4d2e;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+article h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    color: #1a4d2e;
+    font-weight: 500;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: #4a90a4;
+    font-weight: 500;
+}
+
+article p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+article strong {
+    color: #1a4d2e;
+}
+
+article ul, article ol {
+    margin: 1.5rem 0 1.5rem 2rem;
+}
+
+article li {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+article figure {
+    margin: 3rem 0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+article figcaption {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Post Newsletter CTA */
+.post-newsletter {
+    background: linear-gradient(135deg, #4a90a4, #6babc4);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.post-newsletter h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.post-newsletter p {
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    article h1 {
+        font-size: 2rem;
+    }
+    
+    article h2 {
+        font-size: 1.6rem;
+    }
+    
+    .newsletter-section h2,
+    .latest-posts h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav .logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
