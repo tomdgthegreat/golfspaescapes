@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GolfSpaEscapes | Luxury Golf & Spa Travel for Couples</title>
+    <meta name="description" content="Discover the world's best golf resorts and spa destinations. Expert reviews, travel guides, and couples getaway ideas combining championship golf courses with luxury spa experiences.">
+    
+    <link rel="canonical" href="https://golfspaescapes.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GolfSpaEscapes | Luxury Golf & Spa Travel">
+    <meta property="og:description" content="The ultimate guide to golf and spa resort vacations worldwide">
+    <meta property="og:image" content="https://golfspaescapes.com/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://golfspaescapes.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "GolfSpaEscapes",
+      "description": "Luxury golf and spa travel experiences for couples",
+      "url": "https://golfspaescapes.com"
+    }
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7040732287070032"
+         crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="/" class="logo">⛳ GolfSpaEscapes</a>
+            <ul class="nav-menu">
+                <li><a href="/#latest">Latest Posts</a></li>
+                <li><a href="/#newsletter">Newsletter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Luxury Golf & Spa Escapes for Couples</h1>
+            <p>Discover championship golf courses paired with world-class spas at the finest resorts worldwide</p>
+        </div>
+    </header>
+
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <h2>✉️ Weekly Travel Inspiration</h2>
+            <p>Get destination reviews, travel deals, and couples getaway ideas delivered every week.</p>
+            <div class="newsletter-embed">
+                <iframe src="https://embeds.beehiiv.com/pub_8e55bbae-463e-4363-b2ae-b9616436c2c7" 
+                        data-test-id="beehiiv-embed"
+                        width="100%" 
+                        height="320" 
+                        frameborder="0" 
+                        scrolling="no"
+                        style="border-radius: 4px; background: white;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="latest" class="latest-posts">
+        <div class="container">
+            <h2>Latest Destinations</h2>
+            <div id="posts-grid" class="posts-grid">
+                <p style="text-align: center; color: #666;">Loading posts...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GolfSpaEscapes. All rights reserved.</p>
+            <p><a href="/admin/publish.html" style="color: #a8c686;">Admin</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Load latest posts
+        fetch('/api/posts')
+            .then(res => res.json())
+            .then(posts => {
+                const grid = document.getElementById('posts-grid');
+                if (posts.length === 0) {
+                    grid.innerHTML = '<p style="text-align: center; color: #666;">No posts yet. <a href="/admin/publish.html" style="color: #1a4d2e;">Publish your first post!</a></p>';
+                    return;
+                }
+                
+                grid.innerHTML = posts.map(post => `
+                    <article class="post-card">
+                        <h3><a href="/posts/${post.slug}.html">${post.title}</a></h3>
+                        <p>${post.metaDescription}</p>
+                        <a href="/posts/${post.slug}.html" class="read-more">Read More →</a>
+                    </article>
+                `).join('');
+            })
+            .catch(err => {
+                console.error('Error loading posts:', err);
+                document.getElementById('posts-grid').innerHTML = '<p style="text-align: center; color: #666;">Error loading posts.</p>';
+            });
+    </script>
+</body>
+</html>
